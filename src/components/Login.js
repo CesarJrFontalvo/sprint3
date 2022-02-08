@@ -19,12 +19,12 @@ function Login() {
     const handleLogin = (e) => {
        e.preventDefault();
        dispatch(loginEmailPassword(email,password));
-       navigate("/carrusel")
+       navigate("/home")
     }
 
     const handleGoogle = () => {
          dispatch(loginGoogle());
-         navigate("/carrusel")//momentanio mientras se implementa rutas privadas
+         navigate("/home")//momentanio mientras se implementa rutas privadas
     }
 
     return (
