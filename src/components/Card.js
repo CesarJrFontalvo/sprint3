@@ -1,25 +1,64 @@
-import React from 'react';
+// import { useFormik } from 'formik';
+import React, { useEffect } from 'react';
 
 import { Card, Container } from 'react-bootstrap';
+import { useDispatch, useSelector } from 'react-redux';
+import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
+// import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
 
 const Cardd = () => {
+
+    const dispatch = useDispatch();
+
+    
+    
+    const { listaPelicula } = useSelector(store => store.employee);
+    console.log(listaPelicula)
+    
+    useEffect(() => {
+        dispatch(listEmployeeAsync())
+     }, [])
+    // const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //     console.log(dispatch(listEmployeeAsync()))
+    //  }, [])
+
+    // const formik = useFormik({
+    //     initialValues: {
+    //         url: "",
+    //         nombre: "",
+    //         descripcion: "",
+    //         fec_estro: "",
+    //         valoracion: ""
+    //     },
+        // onSubmit: (data) => {
+        //     dispatch(registerEmployeeAsync(data))
+        // },
+
+    // })
+
   return (
-            <Container className=" d-flex">
-<li>
-<ul>
+            <Container className="d-flex">
+                 {
+                     listaPelicula.map((e, i) => (
+                <li >
+                <ul key={i} className="  col-sm-12 ">
+                   
+                    <Card   >
+                       <Card.Img variant="top" src={e.url} alt="..." />
+                        <Card.Body>
+                            <Card.Text>
+                                   <h4>Titulo: {e.nombre}</h4>
+                                   <h4> {e.valoracion}</h4>
+                            </Card.Text>
+                      </Card.Body>
+                    </Card>
+                </ul>
 
-<Card className=" col-md-4">
-                <Card.Img variant="top" src="https://m.media-amazon.com/images/M/MV5BMjk3ODhmNjgtZjllOC00ZWZjLTkwYzQtNzc1Y2ZhMjY2ODE0XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg" />
-                <Card.Body>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk
-                    of the card's content.
-                </Card.Text>
-                </Card.Body>
-            </Card>
-</ul>
-
-</li>
+                </li>
+                    ))
+                    }
 
             </Container>
       

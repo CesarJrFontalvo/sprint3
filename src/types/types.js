@@ -5,9 +5,15 @@
     register: 'register'
 }
 
-export const typesEmpleoyees = {
+export const typesRegistroPelicula = {
 
     register: 'Register',
     list: 'List',
+    delete: 'Delete'
+}
+export const typesRegistroCarrusel = {
+
+    register: 'Register',
+    lista: 'Lista',
     delete: 'Delete'
 }
