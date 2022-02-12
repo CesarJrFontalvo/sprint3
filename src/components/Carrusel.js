@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Col, Container, Row } from 'react-bootstrap';
+import {  Carousel, Col, Container, Row } from 'react-bootstrap';
 
 
 const Carrusel = () => {
@@ -7,14 +7,14 @@ const Carrusel = () => {
 
 
   return (
-    <Container className="mt-3">
+    <Container className="mt-3 ">
       <Row className="justify-content-md-center">
-        <Col lg="8">
+        <Col className="col-md-7">
           <Carousel >
             <Carousel.Item>
               <img
-                  className=" w-100"
-                src="https://depor.com/resizer/t-VpjqquRLEW4wpnhKx_V3YVQI8=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/DMQN6OF2GJFYNCTKCWWEU7PY7U.jpg"
+                  className=" w-100 "
+                src="https://as01.epimg.net/meristation/imagenes/2020/05/02/reportajes/1588440472_366490_1588440518_noticia_normal.jpg"
                 alt="First slide"
               />
               <Carousel.Caption>
@@ -47,11 +47,25 @@ const Carrusel = () => {
                 <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
               </Carousel.Caption>
             </Carousel.Item>
+
+            <Carousel.Item>
+              <img
+                className=" w-100"
+                src="https://m.guiadelocio.com/var/guiadelocio.com/storage/images/a-fondo/las-peores-peliculas-de-2019/las-peores-peliculas-de-2019/38528468-1-esl-ES/las-peores-peliculas-de-2019.jpg"
+                alt="Third slide"
+              />
+
+              <Carousel.Caption>
+                <h3>Third slide label</h3>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
           </Carousel>
         </Col>
       </Row>
-
     </Container>
+     
+    
 
   );
 

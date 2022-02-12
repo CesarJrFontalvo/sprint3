@@ -3,6 +3,7 @@ import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstr
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
+import '../index.css'
 
 const NavbarBlock = () => {
     const navigate = useNavigate();
@@ -14,10 +15,10 @@ const NavbarBlock = () => {
         navigate("/")
     }
   return (
-    <Container  className="mt-3" >
-            <Navbar bg="dark" variant="dark" expand="md" >
+    <Container  className="mt-3 sticky-top" >
+            <Navbar  id="Navbar" variant="dark" expand="lg" >
         <Container fluid>
-            <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+            <Navbar.Brand href="home">Navbar scroll</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -42,8 +43,9 @@ const NavbarBlock = () => {
                 aria-label="Search"
                 />
                 <Button className="me-2" variant="warning">Buscar</Button>
+                <Button variant="danger" onClick={() => handleLogout()}>Logout</Button>
             </Form>
-            <Button variant="danger" onClick={() => handleLogout()}>Logout</Button>
+            
             </Navbar.Collapse>
         </Container>
         </Navbar>

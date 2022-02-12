@@ -1,3 +1,43 @@
 body{
     background-color: black;
 }
+
+#Navbar{
+    background-color: black;
+}
+#formBasicName{
+    width: 20vw;
+}
+
+#formBasicEmail{
+    width: 20vw;
+}
+
+#formBasicPassword{
+    width: 20vw;
+}
+#labelGoogle{
+    color: white;
+}
+#labelContraseña{
+    color: white;
+}
+
+#formBasicRepitPassword{
+    width: 20vw;
+}
+
+#Form{
+    color: white;
+   margin-left: 40%;
+   /* border: solid; */
+}
+
+#buttonRegistrrse{
+    text-decoration: none;
+    color: white;
+}
+#irLogin{
+    text-decoration: none;
+    color: white;
+}

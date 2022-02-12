@@ -1,12 +1,12 @@
 import React from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {useForm } from '../hooks/useForm';
 import {useDispatch} from 'react-redux';
 import {loginEmailPassword, loginGoogle} from '../actions/actionLogin';
 
 function Login() {
-    const navigate = useNavigate();
+    
     const dispatch = useDispatch();// crear la referencia del dispatch
 
     const [ values, handleInputChange ] = useForm({
@@ -19,40 +19,46 @@ function Login() {
     const handleLogin = (e) => {
        e.preventDefault();
        dispatch(loginEmailPassword(email,password));
-       navigate("/home")
+
     }
 
     const handleGoogle = () => {
          dispatch(loginGoogle());
-         navigate("/home")//momentanio mientras se implementa rutas privadas
+        
     }
 
     return (
-        <Form onSubmit={handleLogin}>
+        <Container className="mt-4">
+        <Form id="Form" onSubmit={handleLogin}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Correo</Form.Label>
+                <Form.Label>Correo:</Form.Label>
                 <Form.Control
                     type="email"
-                    placeholder="Enter email"
+                    placeholder="Ingresa tu email"
                     name="email"
                     value={email}
                     onChange={handleInputChange} />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Contraseña</Form.Label>
+                <Form.Label >Contraseña:</Form.Label>
                 <Form.Control
                     type="password"
-                    placeholder="Password"
+                    placeholder="Ingresa tu contraseña"
                     name="password"
                     value={password}
                     onChange={handleInputChange} />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="success" type="submit" className="me-4">
                 Enviar
             </Button>
 
-            <Container className="auth__social-networks">
+            <Button variant="danger" >
+            <Link to="/registro" id="buttonRegistrrse" >Registrarse</Link>
+            </Button>
+
+            <Container className="auth__social-networks mt-4 ">
+            <Form.Label >Iniciar con Google</Form.Label>
                 <Container
                     className="google-btn"
                     onClick={handleGoogle}
@@ -63,10 +69,9 @@ function Login() {
                     </Container>
                 </Container>
             </Container>
-            <Link to="/registro">Registrarse</Link>
 
         </Form>
-
+     </Container>
     );
 }
 

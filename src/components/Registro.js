@@ -1,4 +1,4 @@
-import { Form, Button} from 'react-bootstrap';
+import { Container, Form, Button} from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { useForm } from '../hooks/useForm';
 import {registroEmailPasswordNombre} from '../actions/actionRegister';
@@ -24,9 +24,10 @@ export const Registro = () => {
 
     return (
         <div>
-            <Form onSubmit={handleRegistro}>
+            <Container className="mt-4">
+            <Form id="Form"onSubmit={handleRegistro}>
                 <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Nombre</Form.Label>
+                    <Form.Label>Nombre:</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Enter name"
@@ -37,7 +38,7 @@ export const Registro = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Correo</Form.Label>
+                    <Form.Label>Correo:</Form.Label>
                     <Form.Control
                         type="email"
                         placeholder="email"
@@ -48,7 +49,7 @@ export const Registro = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Contraseña</Form.Label>
+                    <Form.Label>Contraseña:</Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Password"
@@ -59,7 +60,7 @@ export const Registro = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicRepitPassword">
-                    <Form.Label>Repita contraseña</Form.Label>
+                    <Form.Label>Confirmar contraseña:</Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="Password"
@@ -70,14 +71,16 @@ export const Registro = () => {
                 </Form.Group>
 
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className="me-3">
                     Registrarse
                 </Button>
 
-                <Link to="/">Login</Link>
+                <Button variant="success" >
+                     <Link to="/login" id="irLogin" >Ir a Login</Link>
+                </Button>
 
             </Form>
-
+        </Container>
         </div>
     )
 }

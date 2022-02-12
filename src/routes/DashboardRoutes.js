@@ -11,6 +11,7 @@ export const DashboardRoutes = () => {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path='*' element={<Navigate to="/" />} />
+                    
                 </Routes>
             </div>
 
