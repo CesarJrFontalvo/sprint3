@@ -18,28 +18,14 @@ const Cardd = () => {
     useEffect(() => {
         dispatch(listEmployeeAsync())
      }, [])
-    // const dispatch = useDispatch();
+    
 
-    // useEffect(() => {
-    //     console.log(dispatch(listEmployeeAsync()))
-    //  }, [])
-
-    // const formik = useFormik({
-    //     initialValues: {
-    //         url: "",
-    //         nombre: "",
-    //         descripcion: "",
-    //         fec_estro: "",
-    //         valoracion: ""
-    //     },
-        // onSubmit: (data) => {
-        //     dispatch(registerEmployeeAsync(data))
-        // },
-
-    // })
-
-  return (
+  return (           
+            <div> 
+                <h1 className="h1Peliculas">Todas las peliculas</h1>
+           
             <Container className="d-flex">
+            
                  {
                      listaPelicula.map((e, i) => (
                 <li >
@@ -47,12 +33,14 @@ const Cardd = () => {
                    
                     <Card   >
                        <Card.Img variant="top" src={e.url} alt="..." />
-                        <Card.Body>
+                       <h4> {e.valoracion}</h4>
+                       <h5> {e.nombre}</h5>
+                        {/* <Card.Body>
                             <Card.Text>
-                                   <h4>Titulo: {e.nombre}</h4>
+                                   
                                    <h4> {e.valoracion}</h4>
                             </Card.Text>
-                      </Card.Body>
+                      </Card.Body> */}
                     </Card>
                 </ul>
 
@@ -61,7 +49,7 @@ const Cardd = () => {
                     }
 
             </Container>
-      
+            </div>      
         );
 };
 

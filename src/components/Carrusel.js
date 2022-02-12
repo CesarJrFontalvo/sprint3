@@ -18,7 +18,7 @@ const Carrusel = () => {
 
 
   return (
-    <Container className="mt-3 ">
+    <Container className="mt-3 mb-4">
       <Row className="justify-content-md-center">
         <Col className="col-md-7">
           <Carousel >

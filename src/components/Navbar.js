@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Form, FormControl, Image, Nav, Navbar } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
@@ -18,7 +18,9 @@ const NavbarBlock = () => {
     <Container  className="mt-3 sticky-top" >
             <Navbar  id="Navbar" variant="dark" expand="lg" >
         <Container fluid>
-            <Navbar.Brand href="home">Navbar scroll</Navbar.Brand>
+            <Navbar.Brand href="home">
+                <img id="block-icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Blockbuster_logo.svg/1200px-Blockbuster_logo.svg.png"  alt="google button" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
             <Nav

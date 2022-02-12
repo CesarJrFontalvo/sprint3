@@ -41,3 +41,11 @@ body{
     text-decoration: none;
     color: white;
 }
+.h1Peliculas{
+    margin-left: 10%;
+    color: white;
+}
+#block-icon{
+    width: 50px;
+    height: 50px;
+}
