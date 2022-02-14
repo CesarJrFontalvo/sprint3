@@ -1,7 +1,7 @@
 
 import  {typesRegistroPelicula} from '../types/types';
 import { db } from "../firebase/firebaseConfig";
-import { collection,getDocs} from "@firebase/firestore";
+import { addDoc, collection,getDocs} from "@firebase/firestore";
 
 
 // READ
@@ -24,4 +24,27 @@ export const listSync = (listaPelicula) => {
         type: typesRegistroPelicula.list,
         payload: listaPelicula
     }
+}
+// ---------------------------------------------------------------
+export const registerEmployeeAsync = (newEmployee) => {
+
+    return(dispatch) => {
+
+        addDoc(collection(db,"registroPeliculas"),newEmployee)
+        .then(resp => {
+            dispatch(registerEmployeeSync(newEmployee))
+            // dispatch(listEmployeeAsync())
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+ }
+
+export const registerEmployeeSync = (listaPelicula) => {
+    return{
+        type: typesRegistroPelicula.register,
+        payload: listaPelicula
+    }
+
 }

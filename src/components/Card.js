@@ -1,4 +1,4 @@
-// import { useFormik } from 'formik';
+
 import React, { useEffect } from 'react';
 
 import { Card, Container } from 'react-bootstrap';
@@ -23,7 +23,7 @@ const Cardd = () => {
   return (           
             <div> 
                 <h1 className="h1Peliculas">Todas las peliculas</h1>
-           
+     
             <Container className="d-flex">
             
                  {
@@ -33,7 +33,7 @@ const Cardd = () => {
                    
                     <Card   >
                        <Card.Img variant="top" src={e.url} alt="..." />
-                       <h4> {e.valoracion}</h4>
+                       <h4> ⭐{e.valoracion}</h4>
                        <h5> {e.nombre}</h5>
                         {/* <Card.Body>
                             <Card.Text>

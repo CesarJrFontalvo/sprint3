@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import {  Carousel, Col, Container, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { listCarruselAsync } from '../actions/actionRegistroCarrusel';
-
+import ReactPlayer  from 'react-player';
 
 const Carrusel = () => {
   const dispatch = useDispatch();
@@ -31,8 +31,21 @@ const Carrusel = () => {
                 alt="First slide"
               />
               <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+             
+    
+            
+             <Row>
+               <Col sm={8}>  <div className="player " >
+                <ReactPlayer
+                url={e.trailer}
+                controls
+                // witdht='50px'
+                // height='80px'
+            
+                />
+             </div></Col>
+ 
+            </Row>
               </Carousel.Caption>
             </Carousel.Item>
             ))

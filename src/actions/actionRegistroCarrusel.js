@@ -1,7 +1,7 @@
 
 import  {typesRegistroCarrusel} from '../types/types';
 import { db } from "../firebase/firebaseConfig";
-import { collection,getDocs} from "@firebase/firestore";
+import { addDoc, collection,getDocs} from "@firebase/firestore";
 
 
 // READ
@@ -24,4 +24,27 @@ export const listCarruselSync = (listaCarrusel) => {
         type: typesRegistroCarrusel.lista,
         payload: listaCarrusel
     }
+}
+// ------------------------------------------
+export const registerEmployeeAsync = (newEmployee) => {
+
+    return(dispatch) => {
+
+        addDoc(collection(db,"registroCarrusel"),newEmployee)
+        .then(resp => {
+            dispatch(registerEmployeeSync(newEmployee))
+            // dispatch(listEmployeeAsync())
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+ }
+
+export const registerEmployeeSync = (listaCarrusel) => {
+    return{
+        type: typesRegistroCarrusel.register,
+        payload: listaCarrusel
+    }
+
 }
