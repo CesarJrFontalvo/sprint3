@@ -29,6 +29,7 @@ function Login() {
 
     return (
         <Container className="mt-4">
+             <img id="block-icon" src="https://res.cloudinary.com/difxvqjj3/image/upload/v1644873384/Proyecto2/blockmaster_Mesa_de_trabajo_1_vjpe0r.png"  alt="google button" className="Form"/>
         <Form id="Form" onSubmit={handleLogin}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Correo:</Form.Label>

@@ -1,7 +1,7 @@
 
 import  {typesRegistroPelicula} from '../types/types';
 import { db } from "../firebase/firebaseConfig";
-import { addDoc, collection,getDocs} from "@firebase/firestore";
+import { addDoc,collection,getDocs,query,where,doc,deleteDoc} from "@firebase/firestore";
 
 
 // READ
@@ -25,7 +25,8 @@ export const listSync = (listaPelicula) => {
         payload: listaPelicula
     }
 }
-// ---------------------------------------------------------------
+
+// ------REGISTRAR---------------------------------------------------------
 export const registerEmployeeAsync = (newEmployee) => {
 
     return(dispatch) => {
@@ -47,4 +48,27 @@ export const registerEmployeeSync = (listaPelicula) => {
         payload: listaPelicula
     }
 
+}
+// -------------------------------------------------------------
+
+// ---------ELIMINAR----------------------------------------------------------
+export const deleteEmployeeAsync = (nombre) =>{
+    return async(dispatch) => {
+
+        const estCollection = collection(db,"registroPeliculas");
+        const q = query(estCollection,where("nombre","==",nombre))
+       
+        const datos = await getDocs(q);
+        datos.forEach((docu) => {
+            deleteDoc(doc(db,"registroPeliculas",docu.id));
+        })
+        dispatch(deleteSync(nombre));
+    }
+}
+
+export const deleteSync = (nombre) => {
+    return{
+        type: typesRegistroPelicula.delete,
+        payload: nombre
+    }
 }

@@ -24,15 +24,17 @@ const Cardd = () => {
             <div> 
                 <h1 className="h1Peliculas">Todas las peliculas</h1>
      
-            <Container className="d-flex">
+            <Container className="card-group">
             
                  {
                      listaPelicula.map((e, i) => (
-                <li >
-                <ul key={i} className="  col-sm-12 ">
+               <div className="mt-5 me-5 ">
                    
-                    <Card   >
-                       <Card.Img variant="top" src={e.url} alt="..." />
+                
+                   {/* className="mt-5 me-4" */}
+                    <Card  key={i}   >
+                        
+                       <Card.Img  width="400" src={e.url} alt="..." />
                        <h4> ⭐{e.valoracion}</h4>
                        <h5> {e.nombre}</h5>
                         {/* <Card.Body>
@@ -42,9 +44,10 @@ const Cardd = () => {
                             </Card.Text>
                       </Card.Body> */}
                     </Card>
-                </ul>
+                
+               </div>
 
-                </li>
+               
                     ))
                     }
 

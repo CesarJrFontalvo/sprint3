@@ -20,7 +20,7 @@ const Carrusel = () => {
   return (
     <Container className="mt-3 mb-4">
       <Row className="justify-content-md-center">
-        <Col className="col-md-7">
+        <Col className="col-md-8">
           <Carousel >
            { 
             listaCarrusel.map((e, i) => (
@@ -35,7 +35,7 @@ const Carrusel = () => {
     
             
              <Row>
-               <Col sm={8}>  <div className="player " >
+               <Col lg={2}>  <div className="player " >
                 <ReactPlayer
                 url={e.trailer}
                 controls

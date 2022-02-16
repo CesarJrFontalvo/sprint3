@@ -1,13 +1,22 @@
 import { useFormik } from 'formik';
-import React from 'react'
+import React, { useEffect } from 'react'
 import {Container, Button, Form  } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 // import { Link } from 'react-router-dom';
-import { registerEmployeeAsync } from '../actions/actionRegistroPelicula';
+import { registerEmployeeAsync, listEmployeeAsync } from '../actions/actionRegistroPelicula';
+import ListaRegistro from './ListaRegistro';
 // import { useForm } from '../hooks/useForm';
 
 const RegistroPeliculas = () => {
     const dispatch = useDispatch();
+    
+    // const { listaPelicula } = useSelector(store => store.employee);
+    // console.log(listaPelicula)
+    
+    useEffect(() => {
+        dispatch(listEmployeeAsync())
+     }, [])
+    
 
     const formik = useFormik({
         initialValues: {
@@ -27,7 +36,7 @@ const RegistroPeliculas = () => {
   return (
         <div>
         <Container className="mt-4">
-        <Form id="Form"onSubmit={formik.handleSubmit}>
+        <Form id="Form"onSubmit={formik.handleSubmit }>
 
             <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Url de la imagen:</Form.Label>
@@ -83,16 +92,18 @@ const RegistroPeliculas = () => {
                 />
             </Form.Group>
 
-            <Button variant="primary" type="submit" className="me-3">
+            <Button variant="primary" type="submit" className="me-3" >
                 Registrar
             </Button>
 
             {/* <Button variant="success" >
                 <Link to="https://www.youtube.com/watch?v=eBq8WGviI_Q" target="_blank" id="irLogin" >Ir a Login</Link>
             </Button> */}
-
+    <button type="reset"  onClick={ e => formik.resetForm()}> Reset</button>
         </Form>
     </Container>
+
+    <ListaRegistro/>
     </div>
   )
 }
