@@ -3,12 +3,29 @@ import { Button, Container, Form, FormControl, NavDropdown, Nav, Navbar } from '
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
+import { listSearch } from '../actions/actionRegistroPelicula';
+
+import { useForm } from '../hooks/useForm';
 import '../index.css'
 
 const NavbarBlock = () => {
     const navigate = useNavigate();
 
     const dispatch = useDispatch();
+
+    const [formValues, handleInputChange] = useForm({
+        searchText: ''
+        
+    });
+
+    const { searchText} = formValues;
+
+    const handleSearch = (e)=>{
+        e.preventDefault();
+        dispatch(listSearch(searchText))
+    }
+
+ 
 
     const handleLogout = () => {
         dispatch(logout())
@@ -40,14 +57,17 @@ const NavbarBlock = () => {
                 </NavDropdown>
             </Nav>
 
-            <Form className="d-flex ">
+            <Form className="d-flex " onSubmit={handleSearch}>
                 <FormControl 
                 type="search"
                 placeholder="Busca tu pelicula "
                 className="me-3"
                 aria-label="Search"
+                name="searchText"
+                value={searchText}
+                onChange={handleInputChange}
                 />
-                <Button className="me-2" variant="warning">Buscar</Button>
+                <Button type="submit" className="me-2" variant="warning">Buscar</Button>
                 <Button variant="danger" onClick={() => handleLogout()}>Logout</Button>
             </Form>
             

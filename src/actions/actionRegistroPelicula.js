@@ -25,7 +25,31 @@ export const listSync = (listaPelicula) => {
         payload: listaPelicula
     }
 }
+// BUSQUEDA------------------------------------------------
+export const listSearch = (searchText) => {
+    return async (dispatch) => {
 
+        const querySnapshot =  collection(db,"registroPeliculas");
+        const q = query(querySnapshot,where("nombre","==",searchText))
+
+        const empleados = [];
+        const datos = await getDocs(q);
+        
+        datos.forEach((doc) => {
+            empleados.push({
+                ...doc.data()
+            })
+        });
+        dispatch(listSe(empleados));
+    }
+}
+
+export const listSe = (listaPelicula) => {
+    return {
+        type: typesRegistroPelicula.listBusqueda,
+        payload: listaPelicula
+    }
+}
 // ------REGISTRAR---------------------------------------------------------
 export const registerEmployeeAsync = (newEmployee) => {
 

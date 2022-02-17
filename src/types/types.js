@@ -8,6 +8,7 @@
 export const typesRegistroPelicula = {
 
     register: 'Register',
+    listBusqueda: 'ListBusqueda',
     list: 'List',
     delete: 'Delete'
 }

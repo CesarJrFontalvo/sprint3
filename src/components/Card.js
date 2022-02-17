@@ -1,42 +1,48 @@
 
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 
 import { Card, Container } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
 // import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
 
-const Cardd = () => {
+const Cardd = ({
+    id,
+    url,
+    nombre,
+    descripcion,
+    fec_estreno,
+    valoracion
+}) => {
 
-    const dispatch = useDispatch();
+
+    // const dispatch = useDispatch();
 
     
     
-    const { listaPelicula } = useSelector(store => store.employee);
-    console.log(listaPelicula)
+    // const { listaPelicula } = useSelector(store => store.employee);
+    // console.log(listaPelicula)
     
-    useEffect(() => {
-        dispatch(listEmployeeAsync())
-     }, [])
+    // useEffect(() => {
+    //     dispatch(listEmployeeAsync())
+    //  }, [])
     
 
   return (           
             <div> 
-                <h1 className="h1Peliculas">Todas las peliculas</h1>
-     
-            <Container className="card-group">
-            
-                 {
-                     listaPelicula.map((e, i) => (
-               <div className="mt-5 me-5 ">
+           
+                 {/* {
+                     listaPelicula.map((e, i) => ( */}
+              
                    
                 
                    {/* className="mt-5 me-4" */}
-                    <Card  key={i}   >
+                    {/* <Card  key={i}   > */}
+                    <Card className="me-2 mt-5"  >
                         
-                       <Card.Img  width="400" src={e.url} alt="..." />
-                       <h4> ⭐{e.valoracion}</h4>
-                       <h5> {e.nombre}</h5>
+                       <Card.Img  width="200" heigt="200" src={url} alt="..." />
+                       <h4> ⭐{valoracion}</h4>
+                       <h5> {nombre}</h5>
                         {/* <Card.Body>
                             <Card.Text>
                                    
@@ -45,13 +51,13 @@ const Cardd = () => {
                       </Card.Body> */}
                     </Card>
                 
-               </div>
+           
 
                
-                    ))
-                    }
+                    {/* ))
+                    } */}
 
-            </Container>
+           
             </div>      
         );
 };

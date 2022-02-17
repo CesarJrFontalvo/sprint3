@@ -2,7 +2,8 @@ import { typesRegistroPelicula } from "../types/types";
 
 
 const initialState = {
-    listaPelicula: []
+    listaPelicula: [],
+    search:[]
 }
 
 
@@ -15,6 +16,11 @@ export const employeesReducers = (state = initialState, action) => {
         case typesRegistroPelicula.list:
             return {
                 listaPelicula: [...action.payload]
+            }
+        case typesRegistroPelicula.listBusqueda:
+            return {
+                ...state,
+                search: [...action.payload]
             }
         case typesRegistroPelicula.delete:
             return {
