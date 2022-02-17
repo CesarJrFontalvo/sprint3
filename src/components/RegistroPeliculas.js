@@ -28,6 +28,7 @@ const RegistroPeliculas = () => {
         },
         onSubmit: (data) => {
             dispatch(registerEmployeeAsync(data))
+            dispatch(listEmployeeAsync())
         },
 
     })

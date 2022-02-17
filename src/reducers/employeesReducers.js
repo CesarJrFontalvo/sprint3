@@ -19,7 +19,6 @@ export const employeesReducers = (state = initialState, action) => {
             }
         case typesRegistroPelicula.listBusqueda:
             return {
-                ...state,
                 search: [...action.payload]
             }
         case typesRegistroPelicula.delete:

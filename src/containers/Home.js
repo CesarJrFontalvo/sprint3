@@ -4,6 +4,7 @@ import Carrusel from '../components/Carrusel';
 import { useDispatch, useSelector } from 'react-redux';
 import { listEmployeeAsync, listSearch } from '../actions/actionRegistroPelicula';
 import { Container } from 'react-bootstrap';
+import { listCarruselAsync } from '../actions/actionRegistroCarrusel';
 const List = () => {
   const dispatch = useDispatch();
 
@@ -15,9 +16,13 @@ const List = () => {
     const { search } = useSelector(store => store.employee);
     console.log(search)
     
+    // const { listaCarrusel } = useSelector(store => store.carrusel);
+    // console.log(listaCarrusel)
+    
     useEffect(() => {
         dispatch(listEmployeeAsync())
         dispatch(listSearch())
+        dispatch(listCarruselAsync())
      }, [])
   return (
         <div>

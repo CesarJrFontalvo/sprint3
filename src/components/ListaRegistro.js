@@ -1,7 +1,7 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteEmployeeAsync } from '../actions/actionRegistroPelicula';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteEmployeeAsync, listEmployeeAsync } from '../actions/actionRegistroPelicula';
+import { Container} from 'react-bootstrap';
 
 const ListaRegistro = () => {
     const dispatch = useDispatch();
@@ -9,8 +9,12 @@ const ListaRegistro = () => {
     const { listaPelicula } = useSelector(store => store.employee);
     console.log(listaPelicula)
 
+   
+
   return (
     <div>
+      <Container>
+
     <table className="table text-center mt-3 text-info" >
 
         <thead>
@@ -54,20 +58,9 @@ const ListaRegistro = () => {
             
         </tbody>
     </table>
-    {/* { employees.map((e, i) => (
-    <div  className="col-md-4">
-        <div key={i} className="card animated fadeInUp">
-        <img
-            src={e.url}
-            alt=".."
-            className="card-img-top"
-            width="100"
-        />
-        <h4>{e.nombre} {e.descripcion}</h4>
-        </div>
-    </div>
-    ))} */}
+   
 
+</Container>
 </div>
   )
 }
