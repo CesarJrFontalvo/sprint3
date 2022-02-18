@@ -28,7 +28,7 @@ const ListaRegistro = () => {
             {
                 listaPelicula.map((e, i) => (
                     <tr key={i}  >
-                        <td><img src={e.url} width="100" height="100" /></td>
+                        <td><img src={e.url} width="100" height="100" alt="Pelicula" /></td>
                         <td>{e.nombre}</td>
                         <td>{e.descripcion}</td>
 

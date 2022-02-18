@@ -21,7 +21,7 @@ const List = () => {
     useEffect(() => {
         dispatch(listEmployeeAsync())
      
-     }, [])
+     }, [dispatch])
   return (
         <div>
            

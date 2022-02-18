@@ -14,7 +14,7 @@ const Carrusel = () => {
     
     useEffect(() => {
         dispatch(listCarruselAsync())
-     }, [])
+     }, [dispatch])
 
 
   return (

@@ -15,7 +15,7 @@ const RegistroPeliculas = () => {
     
     useEffect(() => {
         dispatch(listEmployeeAsync())
-     }, [])
+     }, [dispatch])
     
 
     const formik = useFormik({
