@@ -7,9 +7,7 @@ const ListaRegistro = () => {
     const dispatch = useDispatch();
     
     const { listaPelicula } = useSelector(store => store.employee);
-    console.log(listaPelicula)
-
-   
+    
 
   return (
     <div>

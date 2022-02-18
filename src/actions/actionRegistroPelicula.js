@@ -29,26 +29,27 @@ export const listSync = (listaPelicula) => {
 export const listSearch = (searchText) => {
     
     return async (dispatch) => {
-
+       
         const querySnapshot =  collection(db,"registroPeliculas");
-        const q = query(querySnapshot,where("nombre","==",searchText))
-
-        const empleados = [];
+        const q = query(querySnapshot,where('nombre','==',searchText))
+        // const querySnapshot = await getDocs(collection(db, "registroPeliculas"),where('nombre','==',searchText));
+        const pelicula = [];
         const datos = await getDocs(q);
         
         datos.forEach((doc) => {
-            empleados.push({
+            pelicula.push({
+                // uid:doc.id,
                 ...doc.data()
             })
         });
-        dispatch(listSe(empleados));
+        dispatch(listSe(pelicula));
     }
 }
 
-export const listSe = (listaPelicula) => {
+export const listSe = (search) => {
     return {
         type: typesRegistroPelicula.listBusqueda,
-        payload: listaPelicula
+        payload: search
     }
 }
 // ------REGISTRAR---------------------------------------------------------
@@ -59,7 +60,7 @@ export const registerEmployeeAsync = (newEmployee) => {
         addDoc(collection(db,"registroPeliculas"),newEmployee)
         .then(resp => {
             dispatch(registerEmployeeSync(newEmployee))
-            // dispatch(listEmployeeAsync())
+             dispatch(listEmployeeAsync())
         })
         .catch(error => {
             console.log(error);
@@ -88,6 +89,7 @@ export const deleteEmployeeAsync = (nombre) =>{
             deleteDoc(doc(db,"registroPeliculas",docu.id));
         })
         dispatch(deleteSync(nombre));
+        dispatch(listEmployeeAsync())
     }
 }
 

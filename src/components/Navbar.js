@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Container, Form, FormControl, NavDropdown, Nav, Navbar } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../actions/actionLogin';
 import { listSearch } from '../actions/actionRegistroPelicula';
 
@@ -47,14 +47,14 @@ const NavbarBlock = () => {
                 style={{ maxHeight: '100px' , color:'white'}}
                 navbarScroll
             >
-                <Nav.Link href="home">Todos</Nav.Link>
-                <Nav.Link href="#action2">Más valoradas</Nav.Link>
-                <Nav.Link href="#" >
+                <Nav.Link as={Link} to="home">Todos</Nav.Link>
+                <Nav.Link as={Link} to="#action2">Más valoradas</Nav.Link>
+                <Nav.Link as={Link} to="#" >
                 Menos valoradas
                 </Nav.Link>
                 <NavDropdown title="Registrar Peliculas" id="collasible-nav-dropdown">
-                <NavDropdown.Item href="/registro-pelicula">Registrar pelicula en la lista</NavDropdown.Item>
-                <NavDropdown.Item href="/registro-slider">Registrar pelicula en el Slider</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/registro-pelicula">Registrar pelicula en la lista</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/registro-slider">Registrar pelicula en el Slider</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
 

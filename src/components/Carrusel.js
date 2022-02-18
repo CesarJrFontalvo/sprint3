@@ -1,20 +1,20 @@
 import React, { useEffect } from 'react';
 import {  Carousel, Col, Container, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useDispatch, useSelector } from 'react-redux';
 import { listCarruselAsync } from '../actions/actionRegistroCarrusel';
 // import ReactPlayer  from 'react-player';
 
 const Carrusel = () => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
     
     
     const { listaCarrusel } = useSelector(store => store.carrusel);
     
     
-    // useEffect(() => {
-    //     dispatch(listCarruselAsync())
-    //  }, [])
+    useEffect(() => {
+        dispatch(listCarruselAsync())
+     }, [])
 
 
   return (

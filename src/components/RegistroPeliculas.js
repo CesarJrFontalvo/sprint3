@@ -100,7 +100,7 @@ const RegistroPeliculas = () => {
             {/* <Button variant="success" >
                 <Link to="https://www.youtube.com/watch?v=eBq8WGviI_Q" target="_blank" id="irLogin" >Ir a Login</Link>
             </Button> */}
-    <button type="reset"  onClick={ e => formik.resetForm()}> Reset</button>
+    <Button variant="warning" type="reset"  onClick={ e => formik.resetForm()}> Reset</Button>
         </Form>
     </Container>
 

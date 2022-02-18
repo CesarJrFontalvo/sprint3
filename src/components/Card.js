@@ -1,7 +1,7 @@
 
 // import React, { useEffect } from 'react';
 
-import { Card, Container } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
 // import { listEmployeeAsync } from '../actions/actionRegistroPelicula';
