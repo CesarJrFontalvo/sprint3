@@ -1,6 +1,6 @@
 
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteEmployeeAsync, listEmployeeAsync } from '../actions/actionRegistroPelicula';
+import { deleteEmployeeAsync } from '../actions/actionRegistroPelicula';
 import { Container} from 'react-bootstrap';
 
 const ListaRegistro = () => {

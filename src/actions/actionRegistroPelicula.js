@@ -27,6 +27,7 @@ export const listSync = (listaPelicula) => {
 }
 // BUSQUEDA------------------------------------------------
 export const listSearch = (searchText) => {
+    
     return async (dispatch) => {
 
         const querySnapshot =  collection(db,"registroPeliculas");

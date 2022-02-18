@@ -23,6 +23,7 @@ const NavbarBlock = () => {
     const handleSearch = (e)=>{
         e.preventDefault();
         dispatch(listSearch(searchText))
+      
     }
 
  
