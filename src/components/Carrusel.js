@@ -18,9 +18,9 @@ const Carrusel = () => {
 
 
   return (
-    <Container className="mt-3 mb-4">
+    <Container id="carrusel" className="mt-3 mb-4">
       <Row className="justify-content-md-center">
-        <Col className="col-md-8">
+        <Col className="col-md-7">
           <Carousel >
            { 
             listaCarrusel.map((e, i) => (

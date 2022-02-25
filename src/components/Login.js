@@ -28,8 +28,10 @@ function Login() {
     }
 
     return (
-        <Container className="mt-4">
+        <div id="contenImgLogin">
+
              <img id="block-icon" src="https://res.cloudinary.com/difxvqjj3/image/upload/v1644873384/Proyecto2/blockmaster_Mesa_de_trabajo_1_vjpe0r.png"  alt="google button" className="Form"/>
+        <Container id="contenLogin" className="mt-4">
         <Form id="Form" onSubmit={handleLogin}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Correo:</Form.Label>
@@ -57,8 +59,8 @@ function Login() {
             <Button variant="danger" >
             <Link to="/registro" id="buttonRegistrrse" >Registrarse</Link>
             </Button>
-
-            <Container className="auth__social-networks mt-4 ">
+      
+            <Container className="auth__social-networks mt-5 ">
             <Form.Label >Iniciar con Google</Form.Label>
                 <Container
                     className="google-btn"
@@ -73,6 +75,7 @@ function Login() {
 
         </Form>
      </Container>
+     </div>
     );
 }
 

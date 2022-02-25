@@ -40,7 +40,7 @@ const RegistroPeliculaSlider = () => {
     }
   return (
         <div>
-            <Container className="mt-4">
+            <Container id="contenLogin" className="mt-4">
             <Form id="Form"onSubmit={formik.handleSubmit}>
 
                <Form.Group>

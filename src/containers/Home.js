@@ -23,13 +23,13 @@ const List = () => {
      
      }, [dispatch])
   return (
-        <div>
+        <div  >
            
             <Carrusel/>
 
 
             <h1 className="h1Peliculas">Todas las peliculas</h1>
-            <Container className="card-group me-5 mt-5 mb-5">
+            <Container className="card-group">
           {
             (listaPelicula) ?
             (
